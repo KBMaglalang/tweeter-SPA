@@ -19,11 +19,22 @@ body {
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
-  position: relative;
+  /* position: relative; */
   display: flex;
   flex-direction: column;
+  height: 100vh;
 }
 
 /*
 * Additional CSS can be defined below or in other CSS files, as per instructions
 */
+main {
+  background-color: #f4f1ec;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* z-index: 3; */
+  width: 90vw;
+  height: 100vh;
+  margin: auto;
+}
