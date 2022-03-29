@@ -28,6 +28,10 @@ body {
 * Additional CSS can be defined below or in other CSS files, as per instructions
 */
 
+.invalidTweet {
+  color: red;
+}
+
 .tweetControl button {
   background-color: #3e5075;
   color: #FFFFFF;
