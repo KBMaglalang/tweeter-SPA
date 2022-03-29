@@ -54,50 +54,16 @@
 
   <!-- Page-specific (main) content here -->
   <main class="container">
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente fuga est tempora vero unde molestiae, magnam
-      nulla voluptatibus eius ullam ratione! Blanditiis accusantium praesentium nisi totam! Aliquam facilis dolore eum
-      enim expedita fugit nam provident ab exercitationem blanditiis nihil a, fugiat sunt recusandae repellendus
-      perferendis similique debitis laudantium officiis omnis.</p>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente fuga est tempora vero unde molestiae, magnam
-      nulla voluptatibus eius ullam ratione! Blanditiis accusantium praesentium nisi totam! Aliquam facilis dolore eum
-      enim expedita fugit nam provident ab exercitationem blanditiis nihil a, fugiat sunt recusandae repellendus
-      perferendis similique debitis laudantium officiis omnis.</p>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente fuga est tempora vero unde molestiae, magnam
-      nulla voluptatibus eius ullam ratione! Blanditiis accusantium praesentium nisi totam! Aliquam facilis dolore eum
-      enim expedita fugit nam provident ab exercitationem blanditiis nihil a, fugiat sunt recusandae repellendus
-      perferendis similique debitis laudantium officiis omnis.</p>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente fuga est tempora vero unde molestiae, magnam
-      nulla voluptatibus eius ullam ratione! Blanditiis accusantium praesentium nisi totam! Aliquam facilis dolore eum
-      enim expedita fugit nam provident ab exercitationem blanditiis nihil a, fugiat sunt recusandae repellendus
-      perferendis similique debitis laudantium officiis omnis.</p>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente fuga est tempora vero unde molestiae, magnam
-      nulla voluptatibus eius ullam ratione! Blanditiis accusantium praesentium nisi totam! Aliquam facilis dolore eum
-      enim expedita fugit nam provident ab exercitationem blanditiis nihil a, fugiat sunt recusandae repellendus
-      perferendis similique debitis laudantium officiis omnis.</p>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente fuga est tempora vero unde molestiae, magnam
-      nulla voluptatibus eius ullam ratione! Blanditiis accusantium praesentium nisi totam! Aliquam facilis dolore eum
-      enim expedita fugit nam provident ab exercitationem blanditiis nihil a, fugiat sunt recusandae repellendus
-      perferendis similique debitis laudantium officiis omnis.</p>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente fuga est tempora vero unde molestiae, magnam
-      nulla voluptatibus eius ullam ratione! Blanditiis accusantium praesentium nisi totam! Aliquam facilis dolore eum
-      enim expedita fugit nam provident ab exercitationem blanditiis nihil a, fugiat sunt recusandae repellendus
-      perferendis similique debitis laudantium officiis omnis.</p>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente fuga est tempora vero unde molestiae, magnam
-      nulla voluptatibus eius ullam ratione! Blanditiis accusantium praesentium nisi totam! Aliquam facilis dolore eum
-      enim expedita fugit nam provident ab exercitationem blanditiis nihil a, fugiat sunt recusandae repellendus
-      perferendis similique debitis laudantium officiis omnis.</p>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente fuga est tempora vero unde molestiae, magnam
-      nulla voluptatibus eius ullam ratione! Blanditiis accusantium praesentium nisi totam! Aliquam facilis dolore eum
-      enim expedita fugit nam provident ab exercitationem blanditiis nihil a, fugiat sunt recusandae repellendus
-      perferendis similique debitis laudantium officiis omnis.</p>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente fuga est tempora vero unde molestiae, magnam
-      nulla voluptatibus eius ullam ratione! Blanditiis accusantium praesentium nisi totam! Aliquam facilis dolore eum
-      enim expedita fugit nam provident ab exercitationem blanditiis nihil a, fugiat sunt recusandae repellendus
-      perferendis similique debitis laudantium officiis omnis.</p>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente fuga est tempora vero unde molestiae, magnam
-      nulla voluptatibus eius ullam ratione! Blanditiis accusantium praesentium nisi totam! Aliquam facilis dolore eum
-      enim expedita fugit nam provident ab exercitationem blanditiis nihil a, fugiat sunt recusandae repellendus
-      perferendis similique debitis laudantium officiis omnis.</p>
+    <section class="new-tweet">
+      <form method="POST" action="/tweets">
+        <label for="tweet-text">What are you humming about?</label>
+        <textarea name="text" id="tweet-text"></textarea>
+        <div class="tweetControl">
+          <button type="submit">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </div>
+      </form>
+    </section>
   </main>
 </body>
 

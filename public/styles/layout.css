@@ -27,12 +27,53 @@ body {
 /*
 * Additional CSS can be defined below or in other CSS files, as per instructions
 */
+
+.tweetControl button {
+  background-color: #3e5075;
+  color: #FFFFFF;
+  border: 0;
+  box-shadow: none;
+}
+
+.tweetControl {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: 'Bungee', cursive;
+  font-size: 24px;
+}
+
+#tweet-text {
+  background-color: transparent;
+  /* border-color: transparent; */
+  width: 100%;
+  overflow: auto;
+  outline: none;
+  resize: none;
+  border-style: none;
+  border-bottom: 5px solid #545149;
+}
+
+.new-tweet label {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+}
+
+.new-tweet {
+  /* display: flex;
+  flex-direction: column; */
+  width: 100%;
+  padding: 1.5em;
+}
+
 main {
   background-color: #f4f1ec;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
+  align-items: center;
   width: 90vw;
-  /* height: 100vh; */
   margin: auto;
+  /* justify-content: center; */
+  /* height: 100vh; */
 }
