@@ -1,0 +1,18 @@
+header h2 {
+  margin: 0px;
+}
+
+header {
+  display:flex;
+  /* background-color: #e6e6ff; */
+  background-color: #3e5075;
+  background-image: url("https://www.transparenttextures.com/patterns/black-linen.png");
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  margin-top: 120px;
+}
