@@ -1,0 +1,34 @@
+/* html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+} */
+
+nav #downArrow {
+  color: red;
+}
+
+nav .navNewTweet {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+nav span {
+  font-family: 'Bungee', cursive;
+  align-self: flex-end;
+  font-size: 1.5em;
+}
+
+nav {
+  display:flex;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  width: 100%;
+  height: 120px;
+  padding: 1.5em;
+  justify-content: space-between;
+  z-index: 1;
+  position: absolute;
+}
