@@ -1,9 +1,9 @@
-header h2 {
+.user h2 {
   margin: 0px;
   color: #FFFFFF;
 }
 
-header {
+.user {
   display:flex;
   flex-direction: column;
   justify-content: center;

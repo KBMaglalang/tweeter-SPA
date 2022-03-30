@@ -32,7 +32,7 @@ body {
   color: red;
 }
 
-.tweetControl button {
+.tweetControl>button {
   background-color: #3e5075;
   color: #FFFFFF;
   border: 0;
@@ -50,7 +50,6 @@ body {
 
 #tweet-text {
   background-color: transparent;
-  /* border-color: transparent; */
   width: 100%;
   overflow: auto;
   outline: none;
