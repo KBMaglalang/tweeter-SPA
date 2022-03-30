@@ -15,6 +15,7 @@ const tempData = [
     content: {
       text: "If I have seen further it is by standing on the shoulders of giants"
     },
+    // eslint-disable-next-line camelcase
     created_at: 1648420492904
   },
   {
@@ -26,107 +27,63 @@ const tempData = [
     content: {
       text: "Je pense , donc je suis"
     },
+    // eslint-disable-next-line camelcase
     created_at: 1648506892904
   }
 ];
 
+
+// ! DON'T ACTUALLY NEED THIS - THERE WILL BE A LIBRARY TO DO ALL OF THIS
+const isMoreThan1 = function(value) {
+  return value > 1 ? 's' : '';
+};
+
+// ! DON'T ACTUALLY NEED THIS - THERE WILL BE A LIBRARY TO DO ALL OF THIS
+const getTweetDate = function(timeDifference) {
+  let tweetDateMessage = '';
+  const timeInfo = [
+    timeDifference.getSeconds(),
+    timeDifference.getMinutes(),
+    timeDifference.getHours(),
+    timeDifference.getDate(),
+    timeDifference.getMonth(),
+    timeDifference.getFullYear() - 1970
+  ];
+  const unitTime = ['second','minute','hour','day','month','year'];
+  
+  // create tweet date infomation
+  for (let i = 0; i < timeInfo.length; i++) {
+    if (timeInfo[i]) {
+      tweetDateMessage = `${timeInfo[i]} ${unitTime[i]}${isMoreThan1(timeInfo[i])}`;
+    }
+  }
+
+  return tweetDateMessage += ' ago';
+};
+
 $(() => {
-  const createTweet = function(tweetData) {
-    const $newTweet = $('<article class="tweet"></article>');
-
+  const createTweetElement = function(tweetObject) {
     // header
-    // TODO fix this ugly code
-    // $newTweet.append(`<header><div><img src=${tweetData.user.avatars}><label for="name">${tweetData.user.name}</label></div><label for="handle">${tweetData.user.handle}</label></header>`);
-    $newTweet.append(`<header><img src=${tweetData.user.avatars}><div class='userInfo'><label for="name">${tweetData.user.name}</label><label for="handle">${tweetData.user.handle}</label></div></header>`);
-
+    const $header = $(`<header><img src=${tweetObject.user.avatars}><div class='userInfo'><label for="name">${tweetObject.user.name}</label><label for="handle">${tweetObject.user.handle}</label></div></header>`);
+    
     // paragraph
-    $newTweet.append(`<p>${tweetData.content.text}</p>`);
+    const $paragraph = $(`<p>${tweetObject.content.text}</p>`);
     
     // footer
-    const dateDifference = new Date(new Date() - new Date(tweetData.created_at));
-    // console.log(dateDifference);
+    let dayMessage = getTweetDate(new Date(new Date() - new Date(tweetObject.created_at)));
+    const $footer = $(`<footer><label for="datePosted">${dayMessage}</label><div class="tweetIcons"><i class="fa-solid fa-flag"></i><i class="fa-solid fa-retweet"></i><i class="fa-solid fa-heart"></i></div></footer>`);
+    
+    // create tweet
+    const $tweet = $('<article class="tweet"></article>').append($header,$paragraph,$footer);
 
-    // TODO fix this ugly code
-    let dayMessage = `${dateDifference.getSeconds()} second(s) ago`;
-    // console.log(dayMessage);
-    if (dateDifference.getMinutes()) {
-      dayMessage = `${dateDifference.getMinutes()} minute(s) ago`;
+    return $tweet;
+  };
+  
+  const renderTweets = function(tweetData) {
+    for (const obj of tweetData) {
+      $('.tweet-container').prepend(createTweetElement(obj));
     }
-    // console.log(dayMessage);
-    if (dateDifference.getHours()) {
-      dayMessage = `${dateDifference.getHours()} hour(s) ago`;
-    }
-    // console.log(dayMessage);
-    if (dateDifference.getDate()) {
-      dayMessage = `${dateDifference.getDate()} day(s) ago`;
-    }
-    // console.log(dayMessage);
-    if (dateDifference.getMonth()) {
-      dayMessage = `${dateDifference.getMonth()} month(s) ago`;
-    }
-    // console.log(dayMessage);
-    if (dateDifference.getFullYear() - 1970) {
-      dayMessage = `${dateDifference.getFullYear()} year(s) ago`;
-    }
-    // console.log(dayMessage);
-
-    // TODO fix this ugly code
-    $newTweet.append(`<footer><label for="datePosted">${dayMessage}</label><div class="tweetIcons"><i class="fa-solid fa-flag"></i><i class="fa-solid fa-retweet"></i><i class="fa-solid fa-heart"></i></div></footer>`);
-
-    $('.tweet-container').append($newTweet); // ! temp
-    // console.log($container);  // ! temp
   };
 
-  createTweet(tempData[0]);   // ! temp
-  createTweet(tempData[1]);   // ! temp
+  renderTweets(tempData); // TODO THIS IS TEMP
 });
-
-
-
-
-
-
-/*
-
-  We can consider a tweet to be an article, and there's an HTML5 tag for that!
-    done
-
-  You shouldn't use IDs within this component. Why not?
-    done
-
-  Consider that the tweet article has a header and a footer. There are HTML5 tags for those too! This way you're not just using plain ol' <div> tags that have no semantic meaning.
-    done
-  
-  Put in fake/dummy text where needed so that you have some content to visualize.
-    done
-  
-  Write out the HTML for the component without adding any CSS classes and then as you style it out, decide which CSS classes you really need and where you can simply use tag based selectors
-    TODO to be cleaned up later
-  
-  For example: article.tweet header is a more clear and specific enough selector compared to article.tweet header.tweet-header. This is because we expect to find only one header per tweet and therefore the class tweet-header is repetitive. Avoiding overuse of CSS classes like this is an important practice. If you're unclear on this, speak to a peer or mentor.
-    TODO this can be cleaned up more to make it more abstract but it is done for now
-  
-  Add the icons in the lower-right corner (you can look for them at Font Awesome)
-    done
-
-
-  things to do:
-
-    now
-      just to get a variable number of tweets to work
-      TODO load the tweets sections with the new information
-      TODO get the lastest tweet and upload to the tweet container
-      TODO on hover of the icons it would need to change color
-
-    later
-      there will be a variable number of tweets shown in the screen
-        TODO will need to load the system with the tweets during startup
-        TODO add to the tweets when the user presses tweet
-        TODO get the tweets
-
-
-
-
-  
-
-*/

@@ -1,5 +1,6 @@
 nav #downArrow {
   color: red;
+  cursor: pointer;
 }
 
 nav .navNewTweet {
@@ -22,7 +23,7 @@ nav {
   height: 120px;
   padding: 1.5em;
   justify-content: space-between;
-  top:0;
+  top: 0;
   z-index: 100;
   position: fixed;
 }

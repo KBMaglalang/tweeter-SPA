@@ -1,13 +1,16 @@
 .fa-heart:hover {
-  color: blue;
+  color: #4056A1;
+  cursor: pointer;
 }
 
 .fa-retweet:hover {
-  color: blue;
+  color: #4056A1;
+  cursor: pointer;
 }
 
 .fa-flag:hover {
-  color: blue;
+  color: #4056A1;
+  cursor: pointer;
 }
 
 .tweet header img {
@@ -27,12 +30,16 @@
   align-items: center;
 }
 
+.tweet footer i{
+  margin-left: 5px;
+}
+
 .tweet footer {
   border-top: 5px solid #545149;
   display:flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-top: 0.5em
+  padding-top: 0.5em;
 }
 
 .tweet {

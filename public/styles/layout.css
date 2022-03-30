@@ -37,6 +37,7 @@ body {
   color: #FFFFFF;
   border: 0;
   box-shadow: none;
+  cursor: pointer;
 }
 
 .tweetControl {
