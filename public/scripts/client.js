@@ -4,14 +4,21 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+const escape = function(str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
+
 $(() => {
 
   const createTweetElement = function(tweetObject) {
     // header
-    const $header = $(`<header><img src=${tweetObject.user.avatars}><div class='userInfo'><label for="name">${tweetObject.user.name}</label><label for="handle" class="handleName">${tweetObject.user.handle}</label></div></header>`);
+    const $header = $(`<header><img src=${escape(tweetObject.user.avatars)}><div class='userInfo'><label for="name">${escape(tweetObject.user.name)}</label><label for="handle" class="handleName">${escape(tweetObject.user.handle)}</label></div></header>`);
     
     // paragraph
-    const $paragraph = $(`<p>${tweetObject.content.text}</p>`);
+    const $paragraph = $(`<p>${escape(tweetObject.content.text)}</p>`);
     
     // footer
     // eslint-disable-next-line no-undef
