@@ -33,7 +33,7 @@ $(() => {
   const loadTweets = function() {
     $.get('/tweets').then(function(data) {
       $('#tweet-text').val('');
-      $("#tweet-text").trigger('input');
+      $("#tweet-text").trigger('input');   // trigger the event listener in composer-char-counter to update the counter
       $('.tweet-container').empty();
       renderTweets(data);
     });
