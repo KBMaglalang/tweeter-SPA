@@ -25,17 +25,17 @@
 }
 
 .fa-heart:hover {
-  color: #4056A1;
+  color: red;
   cursor: pointer;
 }
 
 .fa-retweet:hover {
-  color: #4056A1;
+  color: green;
   cursor: pointer;
 }
 
 .fa-flag:hover {
-  color: #4056A1;
+  color: yellow;
   cursor: pointer;
 }
 
@@ -57,12 +57,20 @@
 
 .tweet {
   border: 5px solid #545149;
-  margin: 10px;
+  /* margin: 10px; */
+  margin-top: 10px;
   padding: 1.5em;
-  width: 100%;
   word-wrap: break-word;
 }
 
 .tweet-container {
   width: 100%;
+}
+
+/* Laptops / Desktops: minimum width of 1024px */
+@media (min-width: 1024px) {
+  .container {
+    margin: 50px;
+    width: 50%;
+  } 
 }

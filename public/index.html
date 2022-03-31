@@ -47,11 +47,11 @@
     </div>
   </nav>
 
+  <!-- user information -->
   <header class="user">
     <div>
       <img src="/images/profile-hex.png">
     </div>
-    <!-- <br> -->
     <div>
       <h2>Kurt Maglalang</h2>
     </div>
@@ -59,6 +59,7 @@
 
   <!-- Page-specific (main) content here -->
   <main class="container">
+    <!-- error messages -->
     <section class="errorMessage">
       <label for="errorEmpty" class="errorEmpty"><i class="fa-solid fa-triangle-exclamation"></i>Can't Enter an Empty
         Tweet!<i class="fa-solid fa-triangle-exclamation"></i></label>
@@ -68,7 +69,6 @@
 
     <section class="new-tweet">
       <form method="POST" action="/tweets">
-        <!-- <form> -->
         <label for="tweet-text">What are you humming about?</label>
         <textarea name="text" id="tweet-text"></textarea>
         <div class="tweetControl">

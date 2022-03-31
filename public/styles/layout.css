@@ -19,6 +19,7 @@ body {
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
+  padding-top: 120px;
 }
 
 /*
@@ -91,4 +92,15 @@ main {
   align-items: center;
   width: 90vw;
   margin: auto;
+}
+
+/* Laptops / Desktops: minimum width of 1024px */
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    flex-direction: row;
+  }
+  .new-tweet {
+    padding-top: 0;
+  }
 }

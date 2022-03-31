@@ -12,5 +12,13 @@
   background-image: url("https://www.transparenttextures.com/patterns/black-linen.png");
   height: 400px;
   width: 100%;
-  margin-top:120px
+}
+
+
+/* Laptops / Desktops: minimum width of 1024px */
+@media (min-width: 1024px) {
+  .user {
+    margin: 50px;
+    width: 50%;
+  }
 }
