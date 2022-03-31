@@ -39,7 +39,20 @@ $(() => {
   // submit the form data to the server
   $('.new-tweet form').submit(function(e) {
     e.preventDefault();
-    $.post('/tweets', $('.new-tweet form').serialize()).then(function() {
+    
+    // check that there is content in the messager box
+    const tweetCheck = $('#tweet-text').val();
+    if (!tweetCheck) {
+      alert("can't tweet an empty message");
+      return;
+    } else if (tweetCheck.length > 140) {
+      alert("can't tweet more than 140 characters");
+      return;
+    }
+    
+    // transmit the date to the server
+    const $tweetData = $('.new-tweet form').serialize();
+    $.post('/tweets', $tweetData).then(function() {
       loadTweets();
     });
   });
