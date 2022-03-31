@@ -1,9 +1,12 @@
 // composer-char-counter.js
 
+const TWEET_CHARACTER_LIMIT = 140;
+
+
 $(document).ready(function() {
   const $tweetField = $("#tweet-text");
   $tweetField.on("input", function() {
-    const remaininCharacters = 140 - $(this).val().length;
+    const remaininCharacters = TWEET_CHARACTER_LIMIT - $(this).val().length;
     const $counter = $(this).parents('.new-tweet').find('.counter');
     $counter.val(remaininCharacters);
     

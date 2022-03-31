@@ -32,8 +32,13 @@ body {
   color: red;
 }
 
-.tweetControl>button {
-  background-color: #3e5075;
+.tweetControl button:hover {
+  /* background-color: #163b87; */
+  box-shadow: 5px 5px #545149;
+}
+
+.tweetControl button {
+  background-color: #4056A1;
   color: #FFFFFF;
   border: 0;
   box-shadow: none;
