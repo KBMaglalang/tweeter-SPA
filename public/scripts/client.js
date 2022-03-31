@@ -46,14 +46,6 @@ $(() => {
       renderTweets(data);
     });
   };
-
-
-
-
-  const errorMessage = function() {
-    
-  };
-
   
   // submit the form data to the server
   $('.new-tweet form').submit(function(e) {
@@ -65,14 +57,10 @@ $(() => {
     // check that there is content in the messager box
     const $tweetCheck = $('#tweet-text').val();
     if (!$tweetCheck) {
-      // alert("can't tweet an empty message");
-      // $('.errorEmpty').show();
-      $('.errorEmpty').slideDown();
+      $('.errorEmpty').slideDown(100);
       return;
     } else if ($tweetCheck.length > 140) {
-      // alert("can't tweet more than 140 characters");
-      // $('.errorOverLimit').show();
-      $('.errorOverLimit').slideDown();
+      $('.errorOverLimit').slideDown(100);
       return;
     }
     
@@ -83,11 +71,5 @@ $(() => {
     });
   });
 
-  
-
   loadTweets();
 });
-
-/*
-todo animated down arrow thing
-*/

@@ -2,7 +2,6 @@
 
 const TWEET_CHARACTER_LIMIT = 140;
 
-
 $(document).ready(function() {
   const $tweetField = $("#tweet-text");
   $tweetField.on("input", function() {
