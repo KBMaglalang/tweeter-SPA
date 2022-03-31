@@ -69,6 +69,22 @@ body {
   font-weight: bold;
 }
 
+.errorEmpty, .errorOverLimit {
+  color: red;
+  font-weight: bolder;
+  border: 5px solid red;
+  padding: 10px;
+  margin: 10px;
+}
+
+.errorMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* width: 90vw;
+  margin: auto; */
+}
+
 .new-tweet {
   /* display: flex;
   flex-direction: column; */

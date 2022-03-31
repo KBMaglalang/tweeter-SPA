@@ -59,6 +59,11 @@
 
   <!-- Page-specific (main) content here -->
   <main class="container">
+    <section class="errorMessage">
+      <label for="errorEmpty" class="errorEmpty">Can't Enter an Empty Tweet!</label>
+      <label for="errorOverLimit" class="errorOverLimit">Can't Enter a Tweet Over 140 Characters!</label>
+    </section>
+
     <section class="new-tweet">
       <form method="POST" action="/tweets">
         <!-- <form> -->

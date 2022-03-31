@@ -10,8 +10,9 @@ const escape = function(str) {
   return div.innerHTML;
 };
 
-
 $(() => {
+  $('.errorEmpty').hide();
+  $('.errorOverLimit').hide();
 
   const createTweetElement = function(tweetObject) {
     // header
@@ -45,18 +46,33 @@ $(() => {
       renderTweets(data);
     });
   };
+
+
+
+
+  const errorMessage = function() {
+    
+  };
+
   
   // submit the form data to the server
   $('.new-tweet form').submit(function(e) {
     e.preventDefault();
     
+    $('.errorOverLimit').hide();
+    $('.errorEmpty').hide();
+
     // check that there is content in the messager box
     const $tweetCheck = $('#tweet-text').val();
     if (!$tweetCheck) {
-      alert("can't tweet an empty message");
+      // alert("can't tweet an empty message");
+      // $('.errorEmpty').show();
+      $('.errorEmpty').slideDown();
       return;
     } else if ($tweetCheck.length > 140) {
-      alert("can't tweet more than 140 characters");
+      // alert("can't tweet more than 140 characters");
+      // $('.errorOverLimit').show();
+      $('.errorOverLimit').slideDown();
       return;
     }
     
@@ -66,6 +82,8 @@ $(() => {
       loadTweets();
     });
   });
+
+  
 
   loadTweets();
 });
