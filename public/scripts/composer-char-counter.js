@@ -2,7 +2,8 @@
 
 const TWEET_CHARACTER_LIMIT = 140;
 
-$(document).ready(function() {
+$(() => {
+  // check over the number of characters available in the tweet form
   const $tweetField = $("#tweet-text");
   $tweetField.on("input", function() {
     const remaininCharacters = TWEET_CHARACTER_LIMIT - $(this).val().length;

@@ -1,19 +1,19 @@
 // composer.js
 
-
-const toggleTweetForm = function() {
-  $('.new-tweet').slideToggle(function() {
-    $('#tweet-text').val('');
-    $("#tweet-text").trigger('input');   // trigger the event listener in composer-char-counter to update the counter
-    $('.new-tweet').is(':visible') ? $('#tweet-text').focus() : $('#tweet-text').blur();
-  });
-  $('.errorEmpty').slideUp();
-  $('.errorOverLimit').slideUp();
-};
-
 $(() => {
   $('.new-tweet').hide();
   $('.toggleButton').hide();
+  
+  // show or hide the tweet form
+  const toggleTweetForm = function() {
+    $('.new-tweet').slideToggle(function() {
+      $('#tweet-text').val('');
+      $("#tweet-text").trigger('input');
+      $('.new-tweet').is(':visible') ? $('#tweet-text').focus() : $('#tweet-text').blur();
+    });
+    $('.errorEmpty').slideUp();
+    $('.errorOverLimit').slideUp();
+  };
 
   // show and hide the nav or toggle button depending on the scroll position
   $(window).scroll(function() {

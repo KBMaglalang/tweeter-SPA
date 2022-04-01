@@ -4,6 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+// prevent cross site scripting
 const escape = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
@@ -11,9 +12,11 @@ const escape = function(str) {
 };
 
 $(() => {
+  // hide elements
   $('.errorEmpty').hide();
   $('.errorOverLimit').hide();
-
+  
+  // create individual tweet from the passed tweet object
   const createTweetElement = function(tweetObject) {
     // header
     const $header = $(`<header><img src=${escape(tweetObject.user.avatars)}><div class='userInfo'><label for="name">${escape(tweetObject.user.name)}</label><label for="handle" class="handleName">${escape(tweetObject.user.handle)}</label></div></header>`);
@@ -31,6 +34,7 @@ $(() => {
     return $tweet;
   };
   
+  // process all tweets from the server
   const renderTweets = function(tweetData) {
     for (const obj of tweetData) {
       $('.tweet-container').prepend(createTweetElement(obj));
