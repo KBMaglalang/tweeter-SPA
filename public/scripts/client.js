@@ -25,7 +25,6 @@ $(() => {
     const $paragraph = $(`<p>${escape(tweetObject.content.text)}</p>`);
     
     // footer
-    // eslint-disable-next-line no-undef
     const $footer = $(`<footer><label class="tweetTime" for="datePosted">${timeago.format(tweetObject.created_at)}</label><div class="tweetIcons"><i class="fa-solid fa-flag"></i><i class="fa-solid fa-retweet"></i><i class="fa-solid fa-heart"></i></div></footer>`);
     
     // create tweet
