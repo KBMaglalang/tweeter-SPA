@@ -3,6 +3,10 @@ nav #downArrow {
   cursor: pointer;
 }
 
+nav label {
+  cursor: pointer;
+}
+
 nav .navNewTweet {
   display:flex;
   flex-direction: column;
