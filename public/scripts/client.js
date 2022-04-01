@@ -13,7 +13,6 @@ const escape = function(str) {
 $(() => {
   $('.errorEmpty').hide();
   $('.errorOverLimit').hide();
-  $('.new-tweet').hide();
 
   const createTweetElement = function(tweetObject) {
     // header
@@ -71,23 +70,6 @@ $(() => {
       loadTweets();
     });
   });
-
-  // sliding new tweet form
-  $('#downArrow, nav label').click(function() {
-    $('.new-tweet').slideToggle(function() {
-      $('#tweet-text').val('');
-      $("#tweet-text").trigger('input');   // trigger the event listener in composer-char-counter to update the counter
-      $('.new-tweet').is(':visible') ? $('#tweet-text').focus() : $('#tweet-text').blur();
-    });
-    $('.errorEmpty').slideUp();
-    $('.errorOverLimit').slideUp();
-  });
-
-  // animate new tweet arrow
-  setInterval(function() {
-    $('#downArrow').animate({"margin-top": '10px'}, 250);
-    $('#downArrow').animate({"margin-top": '0px'}, 250);
-  }, 500);
 
   // load the tweets at startup
   loadTweets();

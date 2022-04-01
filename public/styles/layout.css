@@ -26,6 +26,16 @@ body {
 * Additional CSS can be defined below or in other CSS files, as per instructions
 */
 
+.toggleButton {
+  color: #4056A1;
+  left: 93.5vw;
+  top: 93.5vh;
+  z-index: 100;
+  position: fixed;
+  transform: scale(3);
+  cursor: pointer;
+}
+
 .invalidTweet {
   color: red;
 }
