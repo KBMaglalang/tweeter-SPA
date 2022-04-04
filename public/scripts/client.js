@@ -18,19 +18,11 @@ $(() => {
   
   // create individual tweet from the passed tweet object
   const createTweetElement = function(tweetObject) {
-    // header
     const $header = $(`<header><img src=${escape(tweetObject.user.avatars)}><div class='userInfo'><label for="name">${escape(tweetObject.user.name)}</label><label for="handle" class="handleName">${escape(tweetObject.user.handle)}</label></div></header>`);
-    
-    // paragraph
     const $paragraph = $(`<p>${escape(tweetObject.content.text)}</p>`);
-    
-    // footer
     const $footer = $(`<footer><label class="tweetTime" for="datePosted">${timeago.format(tweetObject.created_at)}</label><div class="tweetIcons"><i class="fa-solid fa-flag"></i><i class="fa-solid fa-retweet"></i><i class="fa-solid fa-heart"></i></div></footer>`);
     
-    // create tweet
-    const $tweet = $('<article class="tweet"></article>').append($header,$paragraph,$footer);
-
-    return $tweet;
+    return $('<article class="tweet"></article>').append($header,$paragraph,$footer);
   };
   
   // process all tweets from the server
@@ -43,8 +35,7 @@ $(() => {
   // get the data from the server
   const loadTweets = function() {
     $.get('/tweets').then(function(data) {
-      $('#tweet-text').val('');
-      $("#tweet-text").trigger('input');   // trigger the event listener in composer-char-counter to update the counter
+      $('#tweet-text').val('').trigger('input');
       $('.tweet-container').empty();
       renderTweets(data);
     });
@@ -54,21 +45,25 @@ $(() => {
   $('.new-tweet form').submit(function(e) {
     e.preventDefault();
     
-    $('.errorOverLimit').hide();
-    $('.errorEmpty').hide();
+    const $tweetCheck = $('#tweet-text').val();
+    const $errorOverLimit = $('.errorOverLimit');
+    const $errorEmpty = $('.errorEmpty');
+
+    $errorOverLimit.hide();
+    $errorEmpty.hide();
 
     // check that there is content in the messager box
-    const $tweetCheck = $('#tweet-text').val();
     if (!$tweetCheck) {
-      $('.errorEmpty').slideDown(100);
+      $errorEmpty.slideDown(100);
       return;
-    } else if ($tweetCheck.length > 140) {
-      $('.errorOverLimit').slideDown(100);
+    }
+    if ($tweetCheck.length > 140) {
+      $errorOverLimit.slideDown(100);
       return;
     }
     
     // transmit the data to the server
-    const $tweetData = $('.new-tweet form').serialize();
+    const $tweetData = $(this).serialize();
     $.post('/tweets', $tweetData).then(function() {
       loadTweets();
     });
