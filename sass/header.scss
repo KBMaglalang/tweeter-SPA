@@ -1,17 +1,23 @@
-.user {
-  display: flex;
+@mixin verticalCenterAlign(){
+  display:flex;
   flex-direction: column;
   align-items: center;
+}
+
+.user {
+  @include verticalCenterAlign();
   justify-content: center;
   background-color: #3e5075;
   background-image: url("https://www.transparenttextures.com/patterns/black-linen.png");
   height: 400px;
   width: 100%;
+
+  h2 {
+    margin: 0px;
+    color: #FFFFFF;
+  }
 }
-.user h2 {
-  margin: 0px;
-  color: #FFFFFF;
-}
+
 
 /* Laptops / Desktops: minimum width of 1024px */
 @media (min-width: 1024px) {

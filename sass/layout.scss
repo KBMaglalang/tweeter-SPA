@@ -6,7 +6,6 @@
 html {
   box-sizing: border-box;
 }
-
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -14,17 +13,19 @@ html {
 /*
  * Global layout stuff
  */
+
 body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   padding-top: 120px;
 }
 
 /*
 * Additional CSS can be defined below or in other CSS files, as per instructions
 */
+
 .toggleButton {
   color: #4056A1;
   left: 93.5vw;
@@ -56,7 +57,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: baseline;
-  font-family: "Bungee", cursive;
+  font-family: 'Bungee', cursive;
   font-size: 24px;
 }
 
@@ -71,7 +72,7 @@ body {
 }
 
 .new-tweet label {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-weight: bold;
 }
 
@@ -109,7 +110,6 @@ main {
     display: flex;
     flex-direction: row;
   }
-
   .new-tweet {
     padding-top: 0;
   }

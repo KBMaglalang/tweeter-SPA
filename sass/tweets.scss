@@ -19,7 +19,7 @@
 }
 
 .tweet header {
-  display: flex;
+  display:flex;
   flex-direction: row;
   align-items: center;
 }
@@ -39,13 +39,13 @@
   cursor: pointer;
 }
 
-.tweet footer i {
+.tweet footer i{
   margin-left: 5px;
 }
 
 .tweet footer {
   border-top: 5px solid #545149;
-  display: flex;
+  display:flex;
   flex-direction: row;
   justify-content: space-between;
   padding-top: 0.5em;
@@ -71,5 +71,5 @@
   .container {
     margin: 50px;
     width: 50%;
-  }
+  } 
 }
