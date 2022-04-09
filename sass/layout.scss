@@ -1,3 +1,5 @@
+@use 'partial';
+
 /*
  * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
  * https://css-tricks.com/international-box-sizing-awareness-day/
@@ -15,10 +17,10 @@ html {
  */
 
 body {
-  color: #545149;
+  color: partial.$tweet-box-color;
   background-color: #f4f1ec;
   font-size: 24px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: partial.$font-1;
   padding-top: 120px;
 }
 
@@ -27,7 +29,7 @@ body {
 */
 
 .toggleButton {
-  color: #4056A1;
+  color: partial.$bg-color;
   left: 93.5vw;
   top: 93.5vh;
   z-index: 100;
@@ -37,19 +39,7 @@ body {
 }
 
 .invalidTweet {
-  color: red;
-}
-
-.tweetControl button:hover {
-  box-shadow: 5px 5px #545149;
-}
-
-.tweetControl button {
-  background-color: #4056A1;
-  color: #FFFFFF;
-  border: 0;
-  box-shadow: none;
-  cursor: pointer;
+  color: partial.$important-color;
 }
 
 .tweetControl {
@@ -57,8 +47,20 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: baseline;
-  font-family: 'Bungee', cursive;
+  font-family: partial.$font-2;
   font-size: 24px;
+
+  button {
+    background-color: partial.$bg-color;
+    color: partial.$text-color;
+    border: 0;
+    box-shadow: none;
+    cursor: pointer;
+  }
+
+  button:hover {
+    box-shadow: 5px 5px partial.$tweet-box-color;
+  }
 }
 
 #tweet-text {
@@ -68,38 +70,34 @@ body {
   outline: none;
   resize: none;
   border-style: none;
-  border-bottom: 5px solid #545149;
-}
-
-.new-tweet label {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: bold;
+  border-bottom: 5px solid partial.$tweet-box-color;
 }
 
 .errorEmpty, .errorOverLimit {
-  color: red;
+  color: partial.$important-color;
   font-weight: bolder;
-  border: 5px solid red;
+  border: 5px solid partial.$important-color;
   padding: 10px;
   margin: 10px;
 }
 
 .errorMessage {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include partial.verticalCenterAlign();
 }
 
 .new-tweet {
   width: 100%;
   padding: 1.5em;
+
+  label {
+    font-family: partial.$font-1;
+    font-weight: bold;
+  }
 }
 
 main {
   background-color: #f4f1ec;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include partial.verticalCenterAlign();
   width: 90vw;
   margin: auto;
 }

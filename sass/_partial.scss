@@ -1,0 +1,12 @@
+$bg-color: #4056A1;
+$text-color: #FFFFFF;
+$font-1: 'Source Sans Pro', sans-serif;
+$font-2: 'Bungee', cursive;
+$tweet-box-color: #545149;
+$important-color: red;
+
+@mixin verticalCenterAlign(){
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}

@@ -1,28 +1,4 @@
-.tweet header .handleName:hover {
-  cursor: pointer;
-}
-
-.tweet header .handleName {
-  font-weight: bold;
-  opacity: 0.2;
-}
-
-.tweet header img {
-  margin-right: 0.5em;
-}
-
-.tweet .userInfo {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.tweet header {
-  display:flex;
-  flex-direction: row;
-  align-items: center;
-}
+@use 'partial';
 
 .fa-heart:hover {
   color: red;
@@ -39,27 +15,51 @@
   cursor: pointer;
 }
 
-.tweet footer i{
-  margin-left: 5px;
-}
-
-.tweet footer {
-  border-top: 5px solid #545149;
-  display:flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding-top: 0.5em;
-}
-
 .tweet:hover {
-  box-shadow: 5px 5px #545149;
+  box-shadow: 5px 5px partial.$tweet-box-color;
 }
 
 .tweet {
-  border: 5px solid #545149;
+  border: 5px solid partial.$tweet-box-color;
   margin-top: 10px;
   padding: 1.5em;
   word-wrap: break-word;
+
+  header {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    
+    img {
+      margin-right: 0.5em;
+    }
+    .handleName {
+      font-weight: bold;
+      opacity: 0.2;
+    }
+    .handleName:hover {
+      cursor: pointer;
+    }
+  }
+
+  .userInfo {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  footer {
+    border-top: 5px solid partial.$tweet-box-color;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 0.5em;
+  
+    i{
+      margin-left: 5px;
+    }
+  }
 }
 
 .tweet-container {

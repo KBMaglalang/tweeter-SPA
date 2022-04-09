@@ -1,11 +1,7 @@
-@mixin verticalCenterAlign(){
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-}
+@use 'partial';
 
 .user {
-  @include verticalCenterAlign();
+  @include partial.verticalCenterAlign();
   justify-content: center;
   background-color: #3e5075;
   background-image: url("https://www.transparenttextures.com/patterns/black-linen.png");
@@ -14,7 +10,7 @@
 
   h2 {
     margin: 0px;
-    color: #FFFFFF;
+    color: partial.$text-color;
   }
 }
 
